@@ -1,10 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '/index.dart';
+import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -29,47 +36,47 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => const LoginWidget(),
+      errorBuilder: (context, state) => LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const LoginWidget(),
+          builder: (context, _) => LoginWidget(),
         ),
         FFRoute(
           name: 'Login',
           path: '/login',
-          builder: (context, params) => const LoginWidget(),
-        ),
-        FFRoute(
-          name: 'Timer',
-          path: '/timer',
-          builder: (context, params) => const TimerWidget(),
-        ),
-        FFRoute(
-          name: 'AddNewTask',
-          path: '/addNewTask',
-          builder: (context, params) => const AddNewTaskWidget(),
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
           name: 'CreateAccount',
           path: '/createAccount',
-          builder: (context, params) => const CreateAccountWidget(),
-        ),
-        FFRoute(
-          name: 'Settings',
-          path: '/settings',
-          builder: (context, params) => const SettingsWidget(),
+          builder: (context, params) => CreateAccountWidget(),
         ),
         FFRoute(
           name: 'TaskScheduler',
           path: '/taskScheduler',
-          builder: (context, params) => const TaskSchedulerWidget(),
+          builder: (context, params) => TaskSchedulerWidget(),
         ),
         FFRoute(
           name: 'AddApplication',
           path: '/addApplication',
-          builder: (context, params) => const AddApplicationWidget(),
+          builder: (context, params) => AddApplicationWidget(),
+        ),
+        FFRoute(
+          name: 'Settings_main',
+          path: '/settingsMain',
+          builder: (context, params) => SettingsMainWidget(),
+        ),
+        FFRoute(
+          name: 'Timer',
+          path: '/timer',
+          builder: (context, params) => TimerWidget(),
+        ),
+        FFRoute(
+          name: 'AddNewTask',
+          path: '/addNewTask',
+          builder: (context, params) => AddNewTaskWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -233,7 +240,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

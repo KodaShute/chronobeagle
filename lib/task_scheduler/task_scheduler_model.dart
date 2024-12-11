@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'home_page_widget.dart' show HomePageWidget;
+import 'task_scheduler_widget.dart' show TaskSchedulerWidget;
 import 'package:flutter/material.dart';
 
-class HomePageModel extends FlutterFlowModel<HomePageWidget> {
+class TaskSchedulerModel extends FlutterFlowModel<TaskSchedulerWidget> {
   @override
   void initState(BuildContext context) {}
 

@@ -108,18 +108,18 @@ class _TimerWidgetState extends State<TimerWidget> {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(-0.8, -0.9),
+              alignment: const AlignmentDirectional(-1.03, -0.96),
               child: FlutterFlowIconButton(
                 borderRadius: 8.0,
-                buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).primary,
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: FlutterFlowTheme.of(context).info,
-                  size: 24.0,
+                buttonSize: 100.0,
+                fillColor: const Color(0x004B39EF),
+                icon: const Icon(
+                  Icons.arrow_circle_left_outlined,
+                  color: Colors.black,
+                  size: 50.0,
                 ),
                 onPressed: () async {
-                  context.pushNamed('HomePage');
+                  context.pushNamed('Login');
                 },
               ),
             ),
@@ -134,8 +134,8 @@ class _TimerWidgetState extends State<TimerWidget> {
                   color: Colors.black,
                   size: 54.0,
                 ),
-                onPressed: () async {
-                  context.pushNamed('Settings');
+                onPressed: () {
+                  print('IconButton pressed ...');
                 },
               ),
             ),

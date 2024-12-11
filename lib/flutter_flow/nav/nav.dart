@@ -29,17 +29,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => const HomePageWidget(),
+      errorBuilder: (context, state) => const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const HomePageWidget(),
+          builder: (context, _) => const LoginWidget(),
         ),
         FFRoute(
-          name: 'HomePage',
-          path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
+          name: 'Login',
+          path: '/login',
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'Timer',
@@ -47,14 +47,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const TimerWidget(),
         ),
         FFRoute(
+          name: 'AddNewTask',
+          path: '/addNewTask',
+          builder: (context, params) => const AddNewTaskWidget(),
+        ),
+        FFRoute(
+          name: 'CreateAccount',
+          path: '/createAccount',
+          builder: (context, params) => const CreateAccountWidget(),
+        ),
+        FFRoute(
           name: 'Settings',
           path: '/settings',
           builder: (context, params) => const SettingsWidget(),
         ),
         FFRoute(
-          name: 'AddNewTask',
-          path: '/addNewTask',
-          builder: (context, params) => const AddNewTaskWidget(),
+          name: 'TaskScheduler',
+          path: '/taskScheduler',
+          builder: (context, params) => const TaskSchedulerWidget(),
         ),
         FFRoute(
           name: 'AddApplication',

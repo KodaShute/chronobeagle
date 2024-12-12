@@ -44,19 +44,7 @@ class _TopbaraccWidgetState extends State<TopbaraccWidget> {
       constraints: BoxConstraints(
         maxWidth: 570.0,
       ),
-      decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).secondaryBackground,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 4.0,
-            color: Color(0x33000000),
-            offset: Offset(
-              0.0,
-              2.0,
-            ),
-          )
-        ],
-      ),
+      decoration: BoxDecoration(),
       child: Padding(
         padding: EdgeInsets.all(4.0),
         child: Row(
@@ -70,7 +58,6 @@ class _TopbaraccWidgetState extends State<TopbaraccWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                 child: FlutterFlowIconButton(
                   buttonSize: 48.0,
-                  fillColor: Colors.white,
                   hoverColor: Color(0xFFF56600),
                   icon: Icon(
                     Icons.arrow_back,
@@ -89,7 +76,6 @@ class _TopbaraccWidgetState extends State<TopbaraccWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                 child: FlutterFlowIconButton(
                   buttonSize: 48.0,
-                  fillColor: Colors.white,
                   hoverColor: Color(0xFFF56600),
                   icon: Icon(
                     Icons.question_mark,

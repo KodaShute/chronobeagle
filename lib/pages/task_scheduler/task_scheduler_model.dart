@@ -1,5 +1,4 @@
 import '/components/topbar_widget.dart';
-import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -16,12 +15,6 @@ class TaskSchedulerModel extends FlutterFlowModel<TaskSchedulerWidget> {
 
   // Model for topbar component.
   late TopbarModel topbarModel;
-  // State field(s) for PaginatedDataTable widget.
-  final paginatedDataTableController1 =
-      FlutterFlowDataTableController<dynamic>();
-  // State field(s) for PaginatedDataTable widget.
-  final paginatedDataTableController2 =
-      FlutterFlowDataTableController<dynamic>();
 
   @override
   void initState(BuildContext context) {
@@ -31,7 +24,5 @@ class TaskSchedulerModel extends FlutterFlowModel<TaskSchedulerWidget> {
   @override
   void dispose() {
     topbarModel.dispose();
-    paginatedDataTableController1.dispose();
-    paginatedDataTableController2.dispose();
   }
 }

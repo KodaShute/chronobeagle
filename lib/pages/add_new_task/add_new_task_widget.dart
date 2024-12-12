@@ -1,8 +1,10 @@
 import '/components/topbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -27,6 +29,8 @@ class _AddNewTaskWidgetState extends State<AddNewTaskWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AddNewTaskModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -391,6 +395,98 @@ class _AddNewTaskWidgetState extends State<AddNewTaskWidget> {
                     borderRadius: BorderRadius.circular(40.0),
                   ),
                 ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0.74, -0.09),
+              child: FlutterFlowTimer(
+                initialTime: _model.timerInitialTimeMs1,
+                getDisplayTime: (value) => StopWatchTimer.getDisplayTime(
+                  value,
+                  hours: false,
+                  minute: false,
+                  milliSecond: false,
+                ),
+                controller: _model.timerController1,
+                updateStateInterval: Duration(milliseconds: 1000),
+                onChanged: (value, displayTime, shouldUpdate) {
+                  _model.timerMilliseconds1 = value;
+                  _model.timerValue1 = displayTime;
+                  if (shouldUpdate) safeSetState(() {});
+                },
+                textAlign: TextAlign.center,
+                style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  fontFamily: 'Inter Tight',
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  fontSize: 86.0,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.w900,
+                  shadows: [
+                    Shadow(
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      offset: Offset(0.0, 0.0),
+                      blurRadius: 10.0,
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(-0.76, -0.09),
+              child: FlutterFlowTimer(
+                initialTime: _model.timerInitialTimeMs2,
+                getDisplayTime: (value) => StopWatchTimer.getDisplayTime(
+                  value,
+                  hours: false,
+                  minute: false,
+                  milliSecond: false,
+                ),
+                controller: _model.timerController2,
+                updateStateInterval: Duration(milliseconds: 1000),
+                onChanged: (value, displayTime, shouldUpdate) {
+                  _model.timerMilliseconds2 = value;
+                  _model.timerValue2 = displayTime;
+                  if (shouldUpdate) safeSetState(() {});
+                },
+                textAlign: TextAlign.center,
+                style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  fontFamily: 'Inter Tight',
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  fontSize: 86.0,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.w900,
+                  shadows: [
+                    Shadow(
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      offset: Offset(0.0, 0.0),
+                      blurRadius: 10.0,
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0.77, 0.1),
+              child: Text(
+                'MINUTES',
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Inter',
+                      fontSize: 30.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w900,
+                    ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(-0.78, 0.1),
+              child: Text(
+                'HOURS',
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Inter',
+                      fontSize: 34.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w900,
+                    ),
               ),
             ),
           ],

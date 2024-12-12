@@ -77,6 +77,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AddApplication',
           path: '/addApplication',
           builder: (context, params) => AddApplicationWidget(),
+        ),
+        FFRoute(
+          name: 'MainApplicationHomeScreen',
+          path: '/mainApplicationHomeScreen',
+          builder: (context, params) => MainApplicationHomeScreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

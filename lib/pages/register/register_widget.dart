@@ -564,7 +564,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           0.0, 4.0, 0.0, 4.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          context.pushNamed('TaskScheduler');
+                                          context.pushNamed('Login');
                                         },
                                         text: 'Get Started',
                                         options: FFButtonOptions(

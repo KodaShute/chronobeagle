@@ -36,12 +36,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => LoginWidget(),
+      errorBuilder: (context, state) => MainApplicationHomeScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => LoginWidget(),
+          builder: (context, _) => MainApplicationHomeScreenWidget(),
         ),
         FFRoute(
           name: 'Login',
@@ -49,19 +49,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: 'CreateAccount',
-          path: '/createAccount',
-          builder: (context, params) => CreateAccountWidget(),
-        ),
-        FFRoute(
           name: 'TaskScheduler',
           path: '/taskScheduler',
           builder: (context, params) => TaskSchedulerWidget(),
-        ),
-        FFRoute(
-          name: 'AddApplication',
-          path: '/addApplication',
-          builder: (context, params) => AddApplicationWidget(),
         ),
         FFRoute(
           name: 'Settings_main',
@@ -74,9 +64,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => TimerWidget(),
         ),
         FFRoute(
+          name: 'Register',
+          path: '/register',
+          builder: (context, params) => RegisterWidget(),
+        ),
+        FFRoute(
           name: 'AddNewTask',
           path: '/addNewTask',
           builder: (context, params) => AddNewTaskWidget(),
+        ),
+        FFRoute(
+          name: 'AddApplication',
+          path: '/addApplication',
+          builder: (context, params) => AddApplicationWidget(),
+        ),
+        FFRoute(
+          name: 'MainApplicationHomeScreen',
+          path: '/mainApplicationHomeScreen',
+          builder: (context, params) => MainApplicationHomeScreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -125,7 +125,7 @@ class _TimerWidgetState extends State<TimerWidget> {
                             text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: '%UNITOFTIME%\nREMAINING',
+                                  text: 'TIME\nREMAINING',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(

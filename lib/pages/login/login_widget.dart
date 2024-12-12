@@ -659,8 +659,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 6.0, 0.0, 6.0),
                                       child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          context.pushNamed('Register');
                                         },
                                         text: 'Create an Account',
                                         options: FFButtonOptions(

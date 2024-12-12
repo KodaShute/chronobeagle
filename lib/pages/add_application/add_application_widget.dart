@@ -244,8 +244,8 @@ class _AddApplicationWidgetState extends State<AddApplicationWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('submit pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('AddNewTask');
                   },
                   text: 'SUBMIT',
                   options: FFButtonOptions(

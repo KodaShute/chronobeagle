@@ -161,8 +161,8 @@ class _TaskSchedulerWidgetState extends State<TaskSchedulerWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            context.pushNamed('AddNewTask');
                           },
                           text: 'ADD NEW TASK',
                           options: FFButtonOptions(

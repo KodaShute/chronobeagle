@@ -149,8 +149,8 @@ class _AddNewTaskWidgetState extends State<AddNewTaskWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('submit pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('Timer');
                   },
                   text: 'SUBMIT',
                   options: FFButtonOptions(
@@ -330,8 +330,8 @@ class _AddNewTaskWidgetState extends State<AddNewTaskWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('selecttask pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('AddApplication');
                   },
                   text: 'SELECT TASK',
                   options: FFButtonOptions(
